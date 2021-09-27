@@ -57,8 +57,8 @@ public class UserView {
             }
         }
     }
-    
-     //lambthe150099
+
+    //lambthe150099
     public User getUserInfo() {
         System.out.println("\n===== Login =====");
         User user = new User();
@@ -85,6 +85,7 @@ public class UserView {
         }
         return password;
     }
+
     //lambthe150099
     public void displayUserList(ArrayList<User> userList) {
         int countItem = 1;

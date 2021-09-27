@@ -38,14 +38,15 @@ public class FruitView {
         }
     }
 
-    public void displayListFruit(ArrayList<Fruit> fruitList) {
-        int countItem = 1;
-        System.out.printf("%-10s%-20s%-20s%10s\n", "Item", "Fruit name", "Origin", "Price");
+    //sửa lại theo đúng format requirement
+    //Đỗ Thành Trung + Lê Trung Thành
+    public static void displayListFruit(ArrayList<Fruit> fruitList) {
+
+        System.out.printf("|++%s++|++%s++|++%s++|++%s++|++%s++|\n", "id", "Fruit name", "Origin", "Price", "Quantity");
         for (Fruit fruit : fruitList) {
             //check shop have item or not 
             if (fruit.getQuantity() != 0) {
-                System.out.printf("%-10d%-20s%-20s%10.0f$\n", countItem++,
-                        fruit.getFruitName(), fruit.getOrigin(), fruit.getPrice());
+                System.out.printf("%5d%10s%15s%10.0f$%10d\n", fruit.getFruitId(), fruit.getFruitName(), fruit.getOrigin(), fruit.getPrice(), fruit.getQuantity());
             }
         }
     }

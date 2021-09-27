@@ -19,8 +19,11 @@ import java.util.Hashtable;
 public class OrderManager {
 
     private Hashtable<String, ArrayList<Order>> customerList = new Hashtable<>();
-    ArrayList<Order> lo = new ArrayList<>();
-    
+    //Thay tên biến từ "lo" thành "listOrder" => tránh gây khó hiểu khi người ngoài đọc code
+    //chuyển lúc gọi hàm checkInputYN() trong function goShopping()
+    //Đỗ Thành Trung - Lê Trung Thành
+    ArrayList<Order> listOrder = new ArrayList<>();
+
     public void shopping(ArrayList<Fruit> lf, Fruit fruit, int quantity) {
         //check list empty user can't buy
         if (lf.isEmpty()) {
@@ -28,41 +31,40 @@ public class OrderManager {
             return;
         }
         //loop until user don't want to buy continue
-        
-        while (true) {
-            
-            fruit.setQuantity(fruit.getQuantity() - quantity);
-            //check item exist or not
-            if (!DataInput.checkItemExist(lo, fruit.getFruitId())) {
-                updateOrder(lo, fruit.getFruitId(), quantity);
-            } else {
-                lo.add(new Order(fruit.getFruitId(), fruit.getFruitName(),
-                        quantity, fruit.getPrice()));
-            }
-
-            if (!DataInput.checkInputYN()) {
-                break;
-            }
-            
+//        while (true) {
+        fruit.setQuantity(fruit.getQuantity() - quantity);
+        //check item exist or not
+        if (!DataInput.checkItemExist(listOrder, fruit.getFruitId())) {
+            updateOrder(listOrder, fruit.getFruitId(), quantity);
+        } else {
+            listOrder.add(new Order(fruit.getFruitId() + "", fruit.getFruitName(),
+                    quantity, fruit.getPrice()));
         }
-        
+//            if (!DataInput.checkInputYN()) {
+//                break;
+//            }
+//        }
     }
-    
-    public void putToHT(String name){//update ten khach hang voi list order cua khach hang
-        customerList.put(name, lo);
+
+    //Thay tên hàm từ "putToHT" thành "putToHashTable" => tránh gây khó hiểu khi người ngoài đọc code
+    //Đỗ Thành Trung - Lê Trung Thành
+    public void putToHashTable(String name) {//update ten khach hang voi list order cua khach hang
+        customerList.put(name, listOrder);
     }
-    
-    public Hashtable<String, ArrayList<Order>> getHT(){
+
+    //Thay tên hàm từ "getHT" thành "getHashTable" => tránh gây khó hiểu khi người ngoài đọc code
+    //Đỗ Thành Trung - Lê Trung Thành
+    public Hashtable<String, ArrayList<Order>> getHashTable() {
         return customerList;
     }
-    
-    public ArrayList<Order> getListOrder(){
-        return lo;
+
+    public ArrayList<Order> getListOrder() {
+        return listOrder;
     }
 
-    public void updateOrder(ArrayList<Order> lo, String id, int quantity) {
+    public void updateOrder(ArrayList<Order> lo, int id, int quantity) {
         for (Order order : lo) {
-            if (order.getFruitId().equalsIgnoreCase(id)) {
+            if (order.getFruitId().equalsIgnoreCase(id + "")) {
                 order.setQuantity(order.getQuantity() + quantity);
                 return;
             }

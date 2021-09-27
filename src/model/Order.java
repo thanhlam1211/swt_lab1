@@ -1,8 +1,8 @@
 package model;
+
 public class Order {
 
     // Commentator: Trung Kiên
-
     private String fruitId;
     private String fruitName;
     private double quantity;   //quantity co the la double

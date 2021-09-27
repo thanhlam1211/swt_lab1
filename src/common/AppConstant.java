@@ -10,6 +10,7 @@ package common;
  * @author kiennt
  */
 public class AppConstant {
+
     public static final String ENTER_CHOICE = "Enter your choice: ";
     public static final String USER_DATA = "src/view/Data/user.dat";
 }

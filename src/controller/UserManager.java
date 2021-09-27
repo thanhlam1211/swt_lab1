@@ -24,9 +24,10 @@ import model.User;
  * @author kiennt
  */
 public class UserManager {
+
     private static final ArrayList<User> userList = new ArrayList<>();
-    
-     public static List<String> getListAccounts() {
+
+    public static List<String> getListAccounts() {
         List<String> listUsers = null;
         try (BufferedReader br = new BufferedReader(new InputStreamReader(
                 new FileInputStream(AppConstant.USER_DATA), StandardCharsets.UTF_8));) {
@@ -57,6 +58,7 @@ public class UserManager {
 
         return false;
     }
+
     //lambthe150099
     public static void changePassword(User user, String newPassword) {
         List<String> listUsers = getListAccounts();
@@ -68,7 +70,7 @@ public class UserManager {
                     user.setPassword(newPassword);
                 }
             }
-            saveAccount(listUsers);            
+            saveAccount(listUsers);
         }
     }
 
@@ -81,28 +83,28 @@ public class UserManager {
         } catch (IOException ex) {
         }
     }
-    
+
     public ArrayList<User> getUserList() {
         return userList;
     }
-    
+
     //lambthe150099
     public void addUser() {
         //loop until user don't want to create fruit
         int id = 1;
         while (true) {
-            if(!userList.isEmpty()) {
+            if (!userList.isEmpty()) {
                 id = userList.get(userList.size() - 1).getUserId() + 1;
             }
             String userName = DataInput.checkInputUserName("Enter user name: ");
-            for(User user : userList) {
-                if(user.getUserName().equalsIgnoreCase(userName)) {
+            for (User user : userList) {
+                if (user.getUserName().equalsIgnoreCase(userName)) {
                     System.out.println("User name must unique!");
                     return;
                 }
             }
             String password = DataInput.checkInputPassword("Enter password: ");
-            int userType = DataInput.checkInputInt("Enter user type: ");      
+            int userType = DataInput.checkInputInt("Enter user type: ");
             userList.add(new User(id, userName, password, userType));
             //check user want to continue or not
             if (!DataInput.checkInputYN()) {
@@ -120,13 +122,14 @@ public class UserManager {
                 System.err.println("User code does not exist!");
                 return;
             }
-            
+
             String userName = DataInput.checkInputUserName("Enter user name: ");
             String password = DataInput.checkInputPassword("Enter password: ");
             int userType = DataInput.checkInputInt("Enter user type: ");
             userList.add(new User(userCode, userName, password, userType));
         }
     }
+
     //lambthe150099
     public void deleteUser() {
         while (true) {
@@ -135,9 +138,9 @@ public class UserManager {
                 System.err.println("Id does not exist!");
                 return;
             }
-            
-            for(int i= 0; i < userList.size(); i++) {
-                if(userCode == userList.get(i).getUserId()) {
+
+            for (int i = 0; i < userList.size(); i++) {
+                if (userCode == userList.get(i).getUserId()) {
                     userList.remove(i);
                     break;
                 }

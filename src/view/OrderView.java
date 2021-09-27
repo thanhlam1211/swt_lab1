@@ -11,12 +11,11 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class OrderView {
-    
-// Commentator: Trung Kiên
 
+// Commentator: Trung Kiên
     public static void displayListOrder(ArrayList<Order> lo) {
         if (lo.isEmpty()) {
-             System.out.println("No order available!");
+            System.out.println("No order available!");
         }
         double total = 0;
         System.out.printf("%15s%15s%15s%15s\n", "Product", "Quantity", "Price", "Amount");
@@ -29,9 +28,8 @@ public class OrderView {
         System.out.println("Total: " + total + "$");
     }
     //allow user show view order
-    
-    // Commentator: Trung Kiên
 
+    // Commentator: Trung Kiên
     public static void viewOrder(Hashtable<String, ArrayList<Order>> ht) {
         if (ht.isEmpty()) {                                     //Check neu list empty thi k in ra
             System.out.println("No order available!");

@@ -149,7 +149,6 @@ public class DataInput {
         }
     }
      */
-
     //check user input int
     public static int checkInputInt(String smg) {
         //loop until user input correct
@@ -203,7 +202,6 @@ public class DataInput {
         }
     }
      */
-
     //check user input yes/ no
     public static boolean checkInputYN() {
         System.out.print("Do you want to continue (Y/N)? ");
@@ -224,9 +222,9 @@ public class DataInput {
     }
 
     //check id exist
-    public static boolean fruitExisted(ArrayList<Fruit> lf, String id) {
+    public static boolean fruitExisted(ArrayList<Fruit> lf, int id) {
         for (Fruit fruit : lf) {
-            if (id.equalsIgnoreCase(fruit.getFruitId())) {
+            if (id == fruit.getFruitId()) {
                 return true;
             }
         }
@@ -244,9 +242,9 @@ public class DataInput {
     }
 
     //check item exist or not
-    public static boolean checkItemExist(ArrayList<Order> lo, String id) {
+    public static boolean checkItemExist(ArrayList<Order> lo, int id) {
         for (Order order : lo) {
-            if (order.getFruitId().equalsIgnoreCase(id)) {
+            if (order.getFruitId().equalsIgnoreCase(id + "")) {
                 return false;
             }
         }

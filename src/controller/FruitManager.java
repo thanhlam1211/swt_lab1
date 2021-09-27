@@ -8,6 +8,17 @@ import model.Fruit;
 public class FruitManager {
 
     private final ArrayList<Fruit> fruitList = new ArrayList<>();
+
+    //Thêm list fruit để check Shopping function
+    //Đỗ Thành Trung - Lê Trung Thành
+    public void Fruit(ArrayList<Fruit> fruitList) {
+        fruitList.add(new Fruit(1, "lemon", 2, 100, "Vietnam"));
+        fruitList.add(new Fruit(2, "Avocado", 5, 100, "Vietnam"));
+        fruitList.add(new Fruit(3, "Banana", 4, 100, "Vietnam"));
+        fruitList.add(new Fruit(4, "Grape", 9, 100, "Vietnam"));
+        fruitList.add(new Fruit(5, "Papaya", 9, 100, "Vietnam"));
+    }
+
 // Commentator: Trung Kiên
 //    
 //    public static boolean isIDDuplicated(ArrayList<Fruit> listFruit, String id) {
@@ -47,7 +58,7 @@ public class FruitManager {
     public void addFruit() {
         //loop until user don't want to create fruit
         while (true) {
-            String fruitId = DataInput.checkInputString("Enter fruit id: ");
+            int fruitId = DataInput.checkInputInt("Enter fruit id: ");
             if (DataInput.fruitExisted(fruitList, fruitId)) {
                 System.err.println("Id exist");
                 return;
@@ -89,7 +100,7 @@ public class FruitManager {
 //            fruitList.add(new Fruit(fruitId, fruitName, price, quantity, origin));
 //        }
         while (true) {
-            String fruitId = DataInput.checkInputString("Enter fruit id: ");
+            int fruitId = DataInput.checkInputInt("Enter fruit id: ");
             if (DataInput.fruitExisted(fruitList, fruitId)) {
                 System.err.println("Id exist");
                 return;
@@ -100,7 +111,6 @@ public class FruitManager {
             
             THÊM CÁC CÂU LỆNH PRINT:
              */
-            
             // Commentator: Trung Kiên
             Fruit f = getFruitById(fruitId);
             System.out.println("Do you want to change fruit name? ");
@@ -132,7 +142,7 @@ public class FruitManager {
 
     public void deleteFruit() {
         while (true) {
-            String fruitId = DataInput.checkInputString("Enter fruit id: ");
+            int fruitId = DataInput.checkInputInt("Enter fruit id: ");
             if (!DataInput.fruitExisted(fruitList, fruitId)) {
                 System.err.println("Id does not exist!");
                 return;
@@ -152,12 +162,11 @@ public class FruitManager {
     public ArrayList<Fruit> getFruitList() {
         return fruitList;
     }
-    
+
 // Commentator: Trung Kiên
-    
-    public Fruit getFruitById(String id) {
+    public Fruit getFruitById(int id) {
         for (Fruit fruit : fruitList) {
-            if (fruit.getFruitId().equalsIgnoreCase(id)) {
+            if (fruit.getFruitId() == id) {
                 return fruit;
             }
         }
@@ -165,7 +174,9 @@ public class FruitManager {
     }
 
     //get fruint user want to by
-    public Fruit getFruitByItem(int item) {
+    //thêm ArrayList<Fruit> fruitList để gọi trong functions goShopping()
+    //Đỗ Thành Trung - Lê Trung Thành
+    public Fruit getFruitByItem(int item, ArrayList<Fruit> fruitList) {
         int countItem = 1;
         for (Fruit fruit : fruitList) {
             //check shop have item or not 
