@@ -89,8 +89,9 @@ public class UserView {
         int countItem = 1;
         System.out.printf("%-12s%-20s%-20s%12s\n", "++ Code ++", "++ User Name ++", "++ Password ++", "++ Role ++");
         for (User user : userList) {
-            System.out.printf("%-10d%-20s%-20s%10.0f$\n", user.getUserId(), user.getUserName(),
-                    user.getPassword(), user.getType());
+            System.out.printf("%-10d%-20s%-20s%10.0s\n", user.getUserId(), user.getUserName(),
+                    //dựa vào 1 để display ra admin hay sales // bug 7
+                    user.getPassword(), user.getType() == 1 ? "ADMIN" : "SALE");
         }
     }
 }

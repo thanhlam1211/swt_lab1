@@ -86,19 +86,39 @@ public class UserManager {
         return userList;
     }
     
-    public void addUser() {
+public void addUser() {
         //loop until user don't want to create fruit
+        int id = 1;
         while (true) {
-            int userCode = DataInput.checkInputInt("Enter user code: ");
-            if (DataInput.userExisted(userList, userCode)) {
-                System.err.println("User code existed!");
-                return;
+            //lỗi 2: id tự tăng, không cần enter code
+            if(!userList.isEmpty()) {
+                id = userList.get(userList.size() - 1).getUserId() + 1;
             }
             
-            String userName = DataInput.checkInputString("Enter user name: ");
-            String password = DataInput.checkInputString("Enter password: ");
+//            
+//            int userCode = DataInput.checkInputInt("Enter user code: ");
+//            if (DataInput.userExisted(userList, userCode)) {
+//                System.err.println("User code existed!");
+//                return;
+//            }
+//          //loi 5 : viet ham username rieng
+            String userName = DataInput.checkInputUserName("Enter user name: ");
+            //bug 4: check username duplicate
+            for(User user : userList) {
+                if(user.getUserName().equalsIgnoreCase(userName)) {
+                    System.out.println("User name must unique!");
+                    return;
+                }
+            }
+            //loi 6 viet ham check password rieng
+            String password = DataInput.checkInputPassword("Enter password: ");
+           //loi 7: check 1 thì gán admin, còn lại là sales
             int userType = DataInput.checkInputInt("Enter user type: ");
-            userList.add(new User(userCode, userName, password, userType));
+           
+            //
+            //loi 3: add new id
+            userList.add(new User(id, userName, password, userType));
+//            userList.add(new User(userCode, userName, password, userType));
             
             //check user want to continue or not
             if (!DataInput.checkInputYN()) {
@@ -106,6 +126,7 @@ public class UserManager {
             }
         }
     }
+
 
     public void updateUser() {
         //loop until user don't want to create fruit
@@ -116,19 +137,26 @@ public class UserManager {
                 return;
             }
             
-            String userName = DataInput.checkInputString("Enter user name: ");
-            String password = DataInput.checkInputString("Enter password: ");
+            String userName = DataInput.checkInputUserName("Enter user name: ");
+            String password = DataInput.checkInputPassword("Enter password: ");
             int userType = DataInput.checkInputInt("Enter user type: ");
             userList.add(new User(userCode, userName, password, userType));
         }
     }
-
     public void deleteUser() {
         while (true) {
             int userCode = DataInput.checkInputInt("Enter user code: ");
             if (!DataInput.userExisted(userList, userCode)) {
                 System.err.println("Id does not exist!");
                 return;
+            }
+            
+            //chưa có code xóa user
+            for(int i= 0; i < userList.size(); i++) {
+                if(userCode == userList.get(i).getUserId()) {
+                    userList.remove(i);
+                    break;
+                }
             }
         }
     }

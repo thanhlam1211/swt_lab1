@@ -42,6 +42,54 @@ public class DataInput {
             }
         }
     }
+        public static String checkInputUserName(String msg) {
+        char ch = msg.charAt(0);
+        while (true) {
+            System.out.println(msg);
+            String result = in.nextLine().trim();
+            if (result.isEmpty()) {
+                System.err.println("Not empty");
+                System.out.print("Enter again: ");
+            } else if (!Character.isAlphabetic(ch)) {
+                System.err.println("User name must start with a character");
+                System.out.print("Enter again: ");
+            } else if (result.length() < 5) {
+                System.err.println("User name leght must >= 5 character");
+                System.out.print("Enter again: ");
+            } else {
+                return result;
+            }
+        }
+    }
+
+    public static String checkInputPassword(String msg) {
+        char ch = msg.charAt(0);
+        while (true) {
+            System.out.println(msg);
+            String result = in.nextLine().trim();
+            if (result.isEmpty()) {
+                System.err.println("Not empty");
+                System.out.print("Enter again: ");
+            }
+            boolean valid = msg.length() >= 6;
+            if (!valid) {
+                System.out.println("Password must have at least 6 characters.");
+            } else {
+                for (char c : msg.toCharArray()) {
+                    if (!Character.isLetter(c) && !Character.isDigit(c)) {
+                        System.out.println("Password can only contain letters and numbers.");
+                        System.out.print("Enter again: ");
+                        valid = false;
+                        break;
+                    }
+                }
+            }
+            if (valid) {
+                System.out.println("Password accepted!");
+                return result;
+            }
+        }
+    }
 
     //check user input number limit
     public static int checkInputIntLimit(int min, int max) {
