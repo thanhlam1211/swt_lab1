@@ -57,12 +57,13 @@ public class UserView {
             }
         }
     }
-
+    
+     //lambthe150099
     public User getUserInfo() {
         System.out.println("\n===== Login =====");
         User user = new User();
-        user.setUserName(DataInput.checkInputString("Username: "));
-        user.setPassword(DataInput.checkInputString("Password: "));
+        user.setUserName(DataInput.checkInputUserName("Username: "));
+        user.setPassword(DataInput.checkInputPassword("Password: "));
         return user;
     }
 

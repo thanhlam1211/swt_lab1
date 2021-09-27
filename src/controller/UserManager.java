@@ -57,7 +57,7 @@ public class UserManager {
 
         return false;
     }
-
+    //lambthe150099
     public static void changePassword(User user, String newPassword) {
         List<String> listUsers = getListAccounts();
         if (listUsers != null && !listUsers.isEmpty()) {
