@@ -8,7 +8,8 @@ import model.Fruit;
 public class FruitManager {
 
     private final ArrayList<Fruit> fruitList = new ArrayList<>();
-
+// Commentator: Trung Kiên
+//    
 //    public static boolean isIDDuplicated(ArrayList<Fruit> listFruit, String id) {
 //        for (Fruit check : listFruit) {
 //            if(id.equalsIgnoreCase(check.getFruitId())) {
@@ -33,6 +34,8 @@ public class FruitManager {
 //    }
 //******************************************************************************    
     /*
+    Commentator: LAMDTHE153097
+    
     KHỞI TẠO MỘT DANH DÁCH CÁC FRUIT BAN ĐẦU
     
     public FruitManager() {
@@ -97,6 +100,8 @@ public class FruitManager {
             
             THÊM CÁC CÂU LỆNH PRINT:
              */
+            
+            // Commentator: Trung Kiên
             Fruit f = getFruitById(fruitId);
             System.out.println("Do you want to change fruit name? ");
             if (DataInput.checkInputYN()) {
@@ -147,7 +152,9 @@ public class FruitManager {
     public ArrayList<Fruit> getFruitList() {
         return fruitList;
     }
-
+    
+// Commentator: Trung Kiên
+    
     public Fruit getFruitById(String id) {
         for (Fruit fruit : fruitList) {
             if (fruit.getFruitId().equalsIgnoreCase(id)) {

@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class OrderView {
+    
+// Commentator: Trung Kiên
 
     public static void displayListOrder(ArrayList<Order> lo) {
         if (lo.isEmpty()) {
@@ -27,6 +29,8 @@ public class OrderView {
         System.out.println("Total: " + total + "$");
     }
     //allow user show view order
+    
+    // Commentator: Trung Kiên
 
     public static void viewOrder(Hashtable<String, ArrayList<Order>> ht) {
         if (ht.isEmpty()) {                                     //Check neu list empty thi k in ra
