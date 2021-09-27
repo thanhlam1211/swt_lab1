@@ -84,7 +84,7 @@ public class UserView {
         }
         return password;
     }
-
+    //lambthe150099
     public void displayUserList(ArrayList<User> userList) {
         int countItem = 1;
         System.out.printf("%-12s%-20s%-20s%12s\n", "++ Code ++", "++ User Name ++", "++ Password ++", "++ Role ++");
