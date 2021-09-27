@@ -1,6 +1,10 @@
 package model;
 public class Fruit {
-
+/*
+    KHAI BÁO THUỘC TÍNH fruitId theo kiểu int theo đúng yêu cầu trong file Requirement_FruitShop.pdf:
+    
+    private int fruitId
+    */
     private String fruitId;
     private String fruitName;
     private double price;

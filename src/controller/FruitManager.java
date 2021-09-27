@@ -31,6 +31,16 @@ public class FruitManager {
 //            }
 //        }
 //    }
+//******************************************************************************    
+    /*
+    KHỞI TẠO MỘT DANH DÁCH CÁC FRUIT BAN ĐẦU
+    
+    public FruitManager() {
+    fruitList.add(new Fruit("SP1", "APPLE", 1000, 2, "VN"));
+    fruitList.add(new Fruit("SP2", "BANANA", 500, 5, "US"));
+    fruitList.add(new Fruit("SP3", "ORANGE", 2000, 10, "kOREA"));
+}
+     */
     public void addFruit() {
         //loop until user don't want to create fruit
         while (true) {
@@ -39,9 +49,17 @@ public class FruitManager {
                 System.err.println("Id exist");
                 return;
             }
+
+            /*
+            THÊM CÁC CÂU LỆNH PRINT:
+             */
+            System.out.print("Enter fruit name: ");
             String fruitName = DataInput.checkInputString("Enter fruit name: ");
+            System.out.print("Enter price: ");
             double price = DataInput.checkInputDouble("Enter price: ");
+            System.out.print("Enter quantity: ");
             int quantity = DataInput.checkInputInt("Enter quantity: ");
+            System.out.print("Enter origin: ");
             String origin = DataInput.checkInputString("Enter origin: ");
             fruitList.add(new Fruit(fruitId, fruitName, price, quantity, origin));
             //check user want to continue or not
@@ -71,24 +89,32 @@ public class FruitManager {
                 System.err.println("Id exist");
                 return;
             }
+
+            /*
+            THÊM CÁC CÂU LỆNH PRINT:
+             */
             Fruit f = getFruitById(fruitId);
             System.out.println("Do you want to change fruit name? ");
             if (DataInput.checkInputYN()) {
+                System.out.print("Enter fruit name: ");
                 String name = DataInput.checkInputString("Enter fruit name: ");
                 f.setFruitName(name);
             }
             System.out.println("Do you want to change fruit price? ");
             if (DataInput.checkInputYN()) {
+                System.out.print("Enter price: ");
                 int price = DataInput.checkInputInt("Enter fruit price: ");
                 f.setPrice(price);
             }
             System.out.println("Do you want to change fruit quantity? ");
             if (DataInput.checkInputYN()) {
+                System.out.print("Enter quantity: ");
                 int quantity = DataInput.checkInputInt("Enter fruit quantity: ");
                 f.setQuantity(quantity);
             }
             System.out.println("Do you want to change fruit origin? ");
             if (DataInput.checkInputYN()) {
+                System.out.print("Enter origin: ");
                 String origin = DataInput.checkInputString("Enter fruit origin: ");
                 f.setOrigin(origin);
             }
@@ -102,6 +128,13 @@ public class FruitManager {
                 System.err.println("Id does not exist!");
                 return;
             }
+            /*
+            THÊM HÀNH ĐỘNG XÓA FRUIT:
+            
+            else{
+                fruitList.remove(fruitId);
+            }
+             */
         }
     }
 
@@ -117,7 +150,7 @@ public class FruitManager {
         }
         return null;
     }
-    
+
     //get fruint user want to by
     public Fruit getFruitByItem(int item) {
         int countItem = 1;

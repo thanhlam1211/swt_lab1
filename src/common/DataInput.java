@@ -42,7 +42,8 @@ public class DataInput {
             }
         }
     }
-        public static String checkInputUserName(String msg) {
+
+    public static String checkInputUserName(String msg) {
         char ch = msg.charAt(0);
         while (true) {
             System.out.println(msg);
@@ -124,6 +125,29 @@ public class DataInput {
         }
     }
 
+    /*
+    HÀM CHECK STRING GỢI Ý ĐỂ THAY THẾ:
+    
+     public String getString(String msg, String err, String regex) {
+        String str;
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println(msg);
+            str = sc.nextLine();
+
+            if (str.trim().equals("")) {
+                continue;
+            }
+            // kiem tra str voi dinh dang
+            if (!str.matches(regex)) {
+                System.out.println(err);
+                continue;
+            }
+            return str;
+        }
+    }
+     */
+
     //check user input int
     public static int checkInputInt(String smg) {
         //loop until user input correct
@@ -155,6 +179,27 @@ public class DataInput {
         }
     }
 
+    /*   
+    HÀM CHECK DOUBLE GỢI Ý ĐỂ THAY THẾ
+
+    public static double checkInputDouble(String smg, double min, double max) {
+        //loop until user input correct
+        while (true) {
+            System.out.println(smg);
+            try {
+                double result = Double.parseDouble(in.nextLine());
+                if (result < min || result > max) {
+                    throw new NumberFormatException();
+                }
+                return result;
+            } catch (NumberFormatException e) {
+                System.err.println("Please input number in rage [" + min + ", " + max + "]\nPlease enter again!");
+            }
+
+        }
+    }
+     */
+
     //check user input yes/ no
     public static boolean checkInputYN() {
         System.out.print("Do you want to continue (Y/N)? ");
@@ -184,7 +229,7 @@ public class DataInput {
         return false;
     }
 
-        //check id exist
+    //check id exist
     public static boolean userExisted(ArrayList<User> userList, int userCode) {
         for (User user : userList) {
             if (userCode == user.getUserId()) {
@@ -193,6 +238,7 @@ public class DataInput {
         }
         return false;
     }
+
     //check item exist or not
     public static boolean checkItemExist(ArrayList<Order> lo, String id) {
         for (Order order : lo) {
