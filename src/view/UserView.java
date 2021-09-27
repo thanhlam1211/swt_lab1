@@ -74,7 +74,7 @@ public class UserView {
                 System.out.println("Old passwords do not match! Please enter again!");
             } else {
                 password = DataInput.checkPassword("Enter new password: ");
-                String confirmPassword = DataInput.checkInputString("Confirm new password: ");
+                String confirmPassword = DataInput.checkInputPassword("Confirm new password: ");
                 if (password.equals(confirmPassword)) {
                     break;
                 } else {

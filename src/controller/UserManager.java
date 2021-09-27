@@ -24,7 +24,7 @@ import model.User;
  * @author kiennt
  */
 public class UserManager {
-    private final ArrayList<User> userList = new ArrayList<>();
+    private static final ArrayList<User> userList = new ArrayList<>();
     
      public static List<String> getListAccounts() {
         List<String> listUsers = null;
