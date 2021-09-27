@@ -51,6 +51,8 @@ public class FruitManager {
             }
 
             /*
+            Commentator: LAMDTHE153097
+            
             THÊM CÁC CÂU LỆNH PRINT:
              */
             System.out.print("Enter fruit name: ");
@@ -91,6 +93,8 @@ public class FruitManager {
             }
 
             /*
+            Commentator: LAMDTHE153097
+            
             THÊM CÁC CÂU LỆNH PRINT:
              */
             Fruit f = getFruitById(fruitId);
@@ -129,6 +133,8 @@ public class FruitManager {
                 return;
             }
             /*
+            Commentator: LAMDTHE153097
+            
             THÊM HÀNH ĐỘNG XÓA FRUIT:
             
             else{

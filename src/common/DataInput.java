@@ -126,6 +126,8 @@ public class DataInput {
     }
 
     /*
+    Commentator: LAMDTHE153097
+    
     HÀM CHECK STRING GỢI Ý ĐỂ THAY THẾ:
     
      public String getString(String msg, String err, String regex) {
@@ -180,6 +182,8 @@ public class DataInput {
     }
 
     /*   
+    Commentator: LAMDTHE153097
+    
     HÀM CHECK DOUBLE GỢI Ý ĐỂ THAY THẾ
 
     public static double checkInputDouble(String smg, double min, double max) {
