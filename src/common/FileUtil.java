@@ -36,7 +36,8 @@ public class FileUtil {
             objectOut.writeObject(serObj);
             objectOut.close();
             System.out.println("The Object  was succesfully written to a file");
-
+            fileOut.close();
+            objectOut.close();
         } catch (Exception ex) {
 //            COMMENTATOR: ĐINH TIẾN LÂM(HE153097)
 //            Solution proposed on Sonarqube:
