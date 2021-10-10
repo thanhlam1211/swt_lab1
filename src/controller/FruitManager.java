@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import model.Fruit;
 
+
 public class FruitManager {
 
     private final ArrayList<Fruit> fruitList = new ArrayList<>();
