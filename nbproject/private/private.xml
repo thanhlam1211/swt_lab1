@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Admin/Downloads/Subject/swt301/LAB2/swt_lab1/test/controller/LamdtHE153097.java</file>
             <file>file:/C:/Users/Admin/Downloads/Subject/swt301/LAB2/swt_lab1/src/common/DataInput.java</file>
             <file>file:/C:/Users/Admin/Downloads/Subject/swt301/LAB2/swt_lab1/src/controller/FruitManager.java</file>
+=======
+            <file>file:/D:/MAJOR/S5/SWT301/swt_lab1/src/controller/FruitManager.java</file>
+>>>>>>> 9cc6080df44d90060a453c838f03ea4ad09ecd5d
         </group>
     </open-files>
 </project-private>

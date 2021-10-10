@@ -36,6 +36,8 @@ public class FileUtil {
             objectOut.writeObject(serObj);
             objectOut.close();
             System.out.println("The Object  was succesfully written to a file");
+            // COMMENTATOR: NGUYỄN TRUNG KIÊN (HE153296)
+            //Solution proposed on Sonarqube:
             fileOut.close();
             objectOut.close();
         } catch (Exception ex) {
@@ -75,9 +77,15 @@ public class FileUtil {
 //            } catch (Exception e) {
 //                LOGGER.log("context", e); // Compliant
 //            }
+                
+
                         e.printStackTrace();
                     }
                 }
+                // COMMENTATOR: NGUYỄN TRUNG KIÊN (HE153296)
+                //Solution proposed on Sonarqube:
+                oos.close();
+                
             } catch (IOException e) {
                 //            COMMENTATOR: ĐINH TIẾN LÂM(HE153097)
 //            Solution proposed on Sonarqube:
@@ -89,6 +97,9 @@ public class FileUtil {
 //            }
                 e.printStackTrace();
             }
+            // COMMENTATOR: NGUYỄN TRUNG KIÊN (HE153296)
+            //Solution proposed on Sonarqube:
+            //fos.close();
         } catch (FileNotFoundException e) {
             //            COMMENTATOR: ĐINH TIẾN LÂM(HE153097)
 //            Solution proposed on Sonarqube:
