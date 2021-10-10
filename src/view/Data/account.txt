@@ -1,0 +1,5 @@
+1|trungdt|Vietnam|Admin|
+2|thanhlt|thanh1234|Sale|
+3|lambt|14France|Sale|
+4|lamdt|Vietnam|Admin|
+5|kien|kien123|Admin|
