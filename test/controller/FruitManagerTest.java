@@ -33,7 +33,7 @@ public class FruitManagerTest {
     /**
      * Test of Fruit method, of class FruitManager.
      */
-    @Test
+    @Test (timeout = 100)
     public void testFruit() {
         ArrayList<Fruit> fruitList = new ArrayList<>();
         fruitList.add(new Fruit(1, "lemon", 2, 100, "Vietnam"));
@@ -48,7 +48,7 @@ public class FruitManagerTest {
     /**
      * Test of addFruit method, of class FruitManager.
      */
-    @Test
+    @Test (timeout = 100)
     public void testAddFruit() {
         ArrayList<Fruit> fruitList = new ArrayList<>();
         fruitList.add(new Fruit(1, "lemon", 2, 100, "Vietnam"));
