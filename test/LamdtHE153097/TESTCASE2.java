@@ -147,9 +147,9 @@ public class TESTCASE2 {
         User user2 = new User(2, "thanhlt", "thanh1234", 2);
         User user3 = new User(3, "lambt", "thanhlam", 2);
         User user4 = new User(4, "lamdt", "Vietnam", 1);
-                listUsers.add(0, user1);
+               
                 
-        //TC1:
+        //TC1: Kiểm tra nếu UserId not found trong list
         boolean flag = false;
         int testUserId = 4;
         if (!DataInput.userExisted(listUsers, testUserId)) {

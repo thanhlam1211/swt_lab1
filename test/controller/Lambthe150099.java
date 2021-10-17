@@ -19,7 +19,9 @@ import static org.junit.Assert.*;
  *
  * @author Admin
  */
+//Testing for UserManager class
 public class Lambthe150099 {
+    private static UserManager testUserManager;
     
     public Lambthe150099() {
     }
@@ -41,31 +43,42 @@ public class Lambthe150099 {
     }
 
     /**
-     * Test of getListAccounts method, of class UserManager.
-     */
-    @Test
-    public void testGetListAccounts() {
-        System.out.println("getListAccounts");
-        List<String> expResult = null;
-        List<String> result = UserManager.getListAccounts();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of checkLogin method, of class UserManager.
      */
     @Test
     public void testCheckLogin() {
-        System.out.println("checkLogin");
-        String filename = "";
-        User user = null;
-        boolean expResult = false;
-        boolean result = UserManager.checkLogin(filename, user);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ArrayList<User> listUsers = new ArrayList<>();
+        User user1 = new User(1, "lam", "1211", 1);
+        User user2 = new User(2, "quang", "123", 3);
+        User user3 = new User(3, "thanh", "123", 4);
+        User user4 = new User(4, "kien", "abcd", 1);
+        
+        listUsers.add(0, user1);
+        listUsers.add(1, user2);
+        listUsers.add(2, user3);
+        listUsers.add(3, user4);
+     
+        testUserManager = new UserManager();
+        
+        //TC1 : Username, passworld correct
+        boolean check = testUserManager.checkLogin(user1);
+        boolean expectedResult = true;
+        assertEquals("TC1", expectedResult, check);
+        
+        //TC2 : Username, passworld wrong
+        boolean check2 = testUserManager.checkLogin(user2);
+        boolean expectedResult2 = false;
+        assertEquals("TC2", expectedResult2, check2);
+        
+         //TC3 : Username true, passworld wrong
+        boolean check3 = testUserManager.checkLogin(user3);
+        boolean expectedResult3 = false;
+        assertEquals("TC3", expectedResult3, check3);
+        
+         //TC4 : Username wrong, passworld true
+        boolean check4 = testUserManager.checkLogin(user4);
+        boolean expectedResult4 = false;
+        assertEquals("TC4", expectedResult4, check4);
     }
 
     /**
@@ -73,74 +86,34 @@ public class Lambthe150099 {
      */
     @Test
     public void testChangePassword() {
-        System.out.println("changePassword");
-        User user = null;
-        String newPassword = "";
-        UserManager.changePassword(user, newPassword);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ArrayList<User> listUsers = new ArrayList<>();
+        User user1 = new User(1, "lam", "1211", 1);
+        User user2 = new User(2, "quang", "123", 3);
+        User user3 = new User(3, "thanh", "123", 4);
+        User user4 = new User(4, "kien", "abcd", 1);
+        
+        listUsers.add(0, user1);
+        listUsers.add(1, user2);
+        listUsers.add(2, user3);
+        listUsers.add(3, user4);
+     
+        testUserManager = new UserManager();
+        
+        //TC1: Wrong username
+        boolean check = testUserManager.changePassword(user4, "1211");
+        boolean expectedResult = false;
+        assertEquals("TC1", expectedResult, check);
+        
+        //TC2 : Username, passworld correct
+        boolean check2 = testUserManager.changePassword(user2,"123");
+        boolean expectedResult2 = true;
+        assertEquals("TC2", expectedResult2, check2);
+        
+        //TC2 : Username correct, passworld wrong
+        boolean check3 = testUserManager.changePassword(user3,"1234");
+        boolean expectedResult3 = false;
+        assertEquals("TC2", expectedResult3, check3);
     }
 
-    /**
-     * Test of saveAccount method, of class UserManager.
-     */
-    @Test
-    public void testSaveAccount() {
-        System.out.println("saveAccount");
-        List<String> listUsers = null;
-        UserManager.saveAccount(listUsers);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getUserList method, of class UserManager.
-     */
-    @Test
-    public void testGetUserList() {
-        System.out.println("getUserList");
-        UserManager instance = new UserManager();
-        ArrayList<User> expResult = null;
-        ArrayList<User> result = instance.getUserList();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of addUser method, of class UserManager.
-     */
-    @Test
-    public void testAddUser() {
-        System.out.println("addUser");
-        UserManager instance = new UserManager();
-        instance.addUser();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of updateUser method, of class UserManager.
-     */
-    @Test
-    public void testUpdateUser() {
-        System.out.println("updateUser");
-        UserManager instance = new UserManager();
-        instance.updateUser();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of deleteUser method, of class UserManager.
-     */
-    @Test
-    public void testDeleteUser() {
-        System.out.println("deleteUser");
-        UserManager instance = new UserManager();
-        instance.deleteUser();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }
