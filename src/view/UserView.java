@@ -46,7 +46,7 @@ public class UserView {
         while (true) {
             User user = getUserInfo();
             try {
-                if (UserManager.checkLogin("account.dat", user)) {
+                if (UserManager.checkLogin(user)) {
                     return user;
                 } else {
                     System.err.println("Username or password is incorrect! Please enter again!");

@@ -41,7 +41,7 @@ public class UserManager {
         return listUsers;
     }
 
-    public static boolean checkLogin(String filename, User user) {
+    public static boolean checkLogin(User user) {
         File f = new File(AppConstant.USER_DATA);
         try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
             String line = null;
@@ -60,7 +60,7 @@ public class UserManager {
     }
 
     //lambthe150099
-    public static void changePassword(User user, String newPassword) {
+    public static boolean changePassword(User user, String newPassword) {
         List<String> listUsers = getListAccounts();
         if (listUsers != null && !listUsers.isEmpty()) {
             for (int i = 0; i < listUsers.size(); i++) {
@@ -68,10 +68,12 @@ public class UserManager {
                 if (user.getUserId() == Integer.parseInt(userInfo[0])) {
                     listUsers.set(i, userInfo[0] + "|" + userInfo[1] + "|" + newPassword + "|" + userInfo[3]);
                     user.setPassword(newPassword);
+                    return true;
                 }
             }
             saveAccount(listUsers);
         }
+        return false;
     }
 
     public static void saveAccount(List<String> listUsers) {
