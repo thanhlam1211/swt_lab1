@@ -20,7 +20,7 @@ import controller.FruitManager;
  *
  * @author Kien
  */
-public class FruitManagerTest {
+public class Kiennthe153296 {
 
     @Before
     public void setUp() {
