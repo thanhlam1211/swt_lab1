@@ -42,6 +42,15 @@ public class DataInput {
             }
         }
     }
+    
+    public static boolean checkNameDuplicate(ArrayList<User> userList, String userName) {
+        for (User user : userList) {
+            if (userName.equalsIgnoreCase(user.getUserName()) ) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static String checkInputUserName(String msg) {
         char ch = msg.charAt(0);

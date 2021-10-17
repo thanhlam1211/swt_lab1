@@ -149,4 +149,27 @@ public class UserManager {
             }
         }
     }
+    public static boolean checkLogin(User user) { // Lỗi 1, truyền filename nhưng chưa sử dụng, xoá file name
+        File f = new File(AppConstant.USER_DATA); // chưa có file dat của user. sửa thành file account.txt
+        try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                String[] userInfo = line.split("\\|");
+                if (user.getUserName().equals(userInfo[1].trim()) && user.getPassword().equals((userInfo[2].trim()))) {
+                    if (userInfo[3].trim().equals("Admin")) {
+                        user.setType(1);
+                    } else {
+                        user.setType(2);
+                    }
+                    //user.setType(Integer.parseInt(userInfo[3].trim()));// sai ở đây
+                    user.setUserId(Integer.parseInt(userInfo[0].trim())); // sai ở đây
+                    return true;
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println("Loi o buffer reader");
+            System.out.println(ex);
+        }
+        return false;
+    }
 }
